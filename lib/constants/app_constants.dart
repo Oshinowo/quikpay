@@ -9,6 +9,10 @@ const kHeadingTextStyle = TextStyle(
   fontSize: 36.0,
   fontWeight: FontWeight.w800,
 );
+const kSecondHeadingTextStyle = TextStyle(
+  fontSize: 26.0,
+  fontWeight: FontWeight.w600,
+);
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter Your Data Here',
   border: InputBorder.none,
