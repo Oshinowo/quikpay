@@ -57,8 +57,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Text(
                       'Getting Started',
                       style: kHeadingTextStyle.copyWith(
-                          fontSize: 36.0.sp,
-                          color: Palette.kCustomColour.shade300),
+                        fontSize: 36.0.sp,
+                        color: Palette.kCustomColour.shade300,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(

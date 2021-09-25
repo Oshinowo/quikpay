@@ -47,7 +47,7 @@ class AccountConfirmationScreen extends StatelessWidget {
                       radius: 50.0,
                     ),
                     SizedBox(
-                      height: kDefaultPadding.h,
+                      height: kDefaultPadding.h + 5,
                     ),
                     Table(
                       border: TableBorder.all(
@@ -176,7 +176,7 @@ class AccountConfirmationScreen extends StatelessWidget {
                         'CANCEL',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.black,
                         ),
                       ),
                     ),

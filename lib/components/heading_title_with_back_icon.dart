@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
 
 class HeadingTitleWithBackIcon extends StatelessWidget {
@@ -30,7 +31,7 @@ class HeadingTitleWithBackIcon extends StatelessWidget {
           child: Text(
             title,
             style: kSecondHeadingTextStyle.copyWith(
-              color: kPrimaryColour,
+              color: Palette.kCustomColour.shade300,
             ),
             textAlign: TextAlign.center,
           ),

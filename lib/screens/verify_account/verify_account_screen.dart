@@ -6,7 +6,7 @@ import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/components/heading_title_description.dart';
 import 'package:quikpay/components/heading_title_with_back_icon.dart';
 import 'package:quikpay/constants/app_constants.dart';
-import 'package:quikpay/screens/account_confirmation/account_confirmation_screen.dart';
+import 'package:quikpay/screens/verify_account/account_confirmation_screen.dart';
 
 class VerifyAccount extends StatefulWidget {
   const VerifyAccount({Key? key}) : super(key: key);

@@ -11,7 +11,7 @@ const kHeadingTextStyle = TextStyle(
 );
 const kSecondHeadingTextStyle = TextStyle(
   fontSize: 26.0,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w400,
 );
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter Your Data Here',
