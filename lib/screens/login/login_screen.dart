@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: SizedBox(
             height: size.height,
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       alignment: Alignment.topLeft,
                       child: IconButton(
                         onPressed: () => Navigator.of(context).pop(),
-                        icon: const Icon(FontAwesomeIcons.arrowLeft),
+                        icon: const FaIcon(FontAwesomeIcons.arrowLeft),
                         iconSize: kDefaultIconSize.sp,
                       ),
                     ),

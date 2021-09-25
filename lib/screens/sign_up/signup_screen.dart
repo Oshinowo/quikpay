@@ -36,6 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: SizedBox(
             height: size.height,
@@ -48,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       alignment: Alignment.topLeft,
                       child: IconButton(
                         onPressed: () => Navigator.of(context).pop(),
-                        icon: const Icon(FontAwesomeIcons.arrowLeft),
+                        icon: const FaIcon(FontAwesomeIcons.arrowLeft),
                         iconSize: kDefaultIconSize.sp,
                       ),
                     ),

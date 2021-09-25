@@ -55,7 +55,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: FaIcon(
                       FontAwesomeIcons.bell,
                       size: kDefaultIconSize.sp,
                     ),
@@ -103,7 +103,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 ),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: Icon(
+                                  icon: FaIcon(
                                     FontAwesomeIcons.solidEyeSlash,
                                     size: kDefaultIconSize.sp,
                                     color: Colors.white,
@@ -154,7 +154,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               onPressed: () => Navigator.of(context).pushNamed(
                                 VerifyAccount.id,
                               ),
-                              icon: const Icon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.plusCircle,
                                 color: kPrimaryColour,
                               ),

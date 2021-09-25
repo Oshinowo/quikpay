@@ -61,7 +61,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               color: kSecondaryColour,
             ),
           ),
-          next: Icon(
+          next: FaIcon(
             FontAwesomeIcons.arrowRight,
             size: kDefaultIconSize.sp,
             color: kSecondaryColour,
@@ -75,4 +75,3 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
-

@@ -36,7 +36,9 @@ class CustomTextField extends StatelessWidget {
         hintStyle: TextStyle(
           fontSize: 14.0.sp,
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding.w,
+        ),
       ),
     );
   }

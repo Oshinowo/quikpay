@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quikpay/components/custom_button.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
+import 'package:quikpay/components/heading_title_description.dart';
+import 'package:quikpay/components/heading_title_with_back_icon.dart';
 import 'package:quikpay/constants/app_constants.dart';
+import 'package:quikpay/screens/account_confirmation/account_confirmation_screen.dart';
 
 class VerifyAccount extends StatefulWidget {
   const VerifyAccount({Key? key}) : super(key: key);
@@ -27,6 +29,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(
@@ -36,29 +39,8 @@ class _VerifyAccountState extends State<VerifyAccount> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: IconButton(
-                          onPressed: () => Navigator.of(context).pop(),
-                          icon: Icon(
-                            FontAwesomeIcons.arrowLeft,
-                            size: kDefaultIconSize.sp,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 2,
-                        child: Text(
-                          'Verify Account',
-                          style: kSecondHeadingTextStyle.copyWith(
-                            color: kPrimaryColour,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
+                  const HeadingTitleWithBackIcon(
+                    title: 'Verify Account',
                   ),
                   SizedBox(
                     height: kDefaultPadding.h * 2,
@@ -67,13 +49,9 @@ class _VerifyAccountState extends State<VerifyAccount> {
                     padding: EdgeInsets.symmetric(
                       horizontal: kDefaultPadding.w * 2,
                     ),
-                    child: Text(
-                      'We want to ensure you are a verified user on the app for future updates regarding app features',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 18.0.sp,
-                          fontWeight: FontWeight.w600),
+                    child: const HeadingTitleDescription(
+                      description:
+                          'We want to ensure you are a verified user on the app for future updates regarding app features',
                     ),
                   ),
                   SizedBox(
@@ -124,7 +102,9 @@ class _VerifyAccountState extends State<VerifyAccount> {
                           CustomButton(
                             label: 'Click to Verify',
                             buttonBackgroundColor: kPrimaryColour,
-                            pressed: () {},
+                            pressed: () => Navigator.of(context).pushNamed(
+                              AccountConfirmationScreen.id,
+                            ),
                           ),
                         ],
                       ),
