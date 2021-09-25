@@ -5,7 +5,7 @@ import 'package:quikpay/constants/app_constants.dart';
 import 'package:quikpay/screens/dashboard/local_components/dashboard_mini_card_with_icon.dart';
 import 'package:quikpay/screens/dashboard/local_components/transaction_list_tile.dart';
 import 'package:quikpay/screens/dashboard/local_components/transactions_navigation_menu_button.dart';
-import 'package:quikpay/screens/verify_account/verify_account_screen.dart';
+import 'package:quikpay/screens/wallet_top_up/add_payment_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   static const String id = 'dashboard screen';
@@ -83,6 +83,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
                               'Your balance',
@@ -96,7 +97,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 Text(
                                   '₦90,569.00',
                                   style: TextStyle(
-                                    fontSize: 24.0.sp,
+                                    fontSize: 32.0.sp,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
                                   ),
@@ -152,7 +153,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             ),
                             IconButton(
                               onPressed: () => Navigator.of(context).pushNamed(
-                                VerifyAccount.id,
+                                AddPaymentAmountScreen.id,
                               ),
                               icon: const FaIcon(
                                 FontAwesomeIcons.plusCircle,

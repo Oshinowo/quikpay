@@ -28,11 +28,11 @@ class AccountVerificationSuccessScreen extends StatelessWidget {
               children: [
                 Positioned(
                   child: Container(
-                    width: 120.w,
-                    height: 220.h,
+                    width: 145.w,
+                    height: 245.h,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(
-                        0.4,
+                        0.35,
                       ),
                       shape: BoxShape.circle,
                     ),
@@ -40,11 +40,11 @@ class AccountVerificationSuccessScreen extends StatelessWidget {
                 ),
                 Positioned(
                   child: Container(
-                    width: 150.w,
-                    height: 250.h,
+                    width: 122.w,
+                    height: 222.h,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(
-                        0.35,
+                        0.4,
                       ),
                       shape: BoxShape.circle,
                     ),
