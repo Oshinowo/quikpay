@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quikpay/screens/verify_account/account_confirmation_screen.dart';
 import 'package:quikpay/screens/dashboard/dashboard_screen.dart';
 import 'package:quikpay/screens/onboarding/onboarding_screen.dart';
+import 'package:quikpay/screens/verify_account/success_screen.dart';
 import 'package:quikpay/screens/verify_account/verify_account_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:quikpay/config/palette.dart';
@@ -56,6 +57,8 @@ class Quikpay extends StatelessWidget {
           VerifyAccount.id: (context) => const VerifyAccount(),
           AccountConfirmationScreen.id: (context) =>
               const AccountConfirmationScreen(),
+          AccountVerificationSuccessScreen.id: (context) =>
+              const AccountVerificationSuccessScreen(),
         },
       ),
     );

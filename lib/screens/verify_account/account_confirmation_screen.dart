@@ -4,6 +4,7 @@ import 'package:quikpay/components/custom_button.dart';
 import 'package:quikpay/components/heading_title_description.dart';
 import 'package:quikpay/components/heading_title_with_back_icon.dart';
 import 'package:quikpay/constants/app_constants.dart';
+import 'package:quikpay/screens/verify_account/success_screen.dart';
 
 class AccountConfirmationScreen extends StatelessWidget {
   const AccountConfirmationScreen({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class AccountConfirmationScreen extends StatelessWidget {
                   horizontal: kDefaultPadding.w,
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     SizedBox(
@@ -165,7 +167,9 @@ class AccountConfirmationScreen extends StatelessWidget {
                     CustomButton(
                       label: 'This is me',
                       buttonBackgroundColor: kPrimaryColour,
-                      pressed: () {},
+                      pressed: () => Navigator.of(context).pushNamed(
+                        AccountVerificationSuccessScreen.id,
+                      ),
                     ),
                     SizedBox(
                       height: kDefaultPadding.h,
