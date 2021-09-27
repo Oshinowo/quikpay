@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,30 +6,19 @@ import 'package:quikpay/components/custom_stack_with_bottom_pattern_image.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
-import 'package:quikpay/screens/auth/forgot_password/forgot_password_screen.dart';
-import 'package:quikpay/screens/auth/sign_up/signup_screen.dart';
-import 'package:quikpay/screens/dashboard/dashboard_screen.dart';
+import 'package:quikpay/screens/auth/login/login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const String id = "login screen";
-  const LoginScreen({Key? key}) : super(key: key);
+class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
+  static const String id = 'forgot password';
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  bool _isChecked = false;
-  final _signInFormGlobalKey = GlobalKey<FormState>();
-  final TextEditingController _emailAddressController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  @override
-  void dispose() {
-    super.dispose();
-    _emailAddressController.dispose();
-    _passwordController.dispose();
-  }
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  final _forgotPasswordFormGlobalKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,23 +38,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.topLeft,
                     child: IconButton(
                       onPressed: () => Navigator.of(context).pop(),
-                      icon: const FaIcon(FontAwesomeIcons.arrowLeft),
+                      icon: const FaIcon(
+                        FontAwesomeIcons.arrowLeft,
+                      ),
                       iconSize: kDefaultIconSize.sp,
                     ),
                   ),
                   SizedBox(height: kDefaultPadding.h / 2),
                   Text(
-                    'Sign in',
+                    'Forgot Password',
                     style: kHeadingTextStyle.copyWith(
-                        fontSize: 36.0.sp,
-                        color: Palette.kCustomColour.shade300),
+                      fontSize: 36.0.sp,
+                      color: Palette.kCustomColour.shade300,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: kDefaultPadding.h / 2,
                   ),
                   Text(
-                    'Login your account to continue',
+                    'Enter your registered email address',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18.0.sp,
@@ -75,12 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: kDefaultPadding.h * 2,
+                    height: kDefaultPadding.h * 3,
                   ),
                   SizedBox(
                     height: size.height * 0.4,
                     child: Form(
-                      key: _signInFormGlobalKey,
+                      key: _forgotPasswordFormGlobalKey,
                       child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
@@ -89,80 +80,39 @@ class _LoginScreenState extends State<LoginScreen> {
                           children: [
                             CustomTextField(
                               asTerikText: false,
-                              controller: _emailAddressController,
+                              controller: _emailController,
                               placeholder: 'Email Address',
                               keyboardInputType: TextInputType.emailAddress,
-                              textInputAction: TextInputAction.next,
-                              validate: (String? value) {},
-                            ),
-                            const Spacer(
-                              flex: 2,
-                            ),
-                            CustomTextField(
-                              asTerikText: true,
-                              controller: _passwordController,
-                              placeholder: 'Password',
-                              keyboardInputType: TextInputType.visiblePassword,
                               textInputAction: TextInputAction.done,
                               validate: (String? value) {},
                             ),
-                            const Spacer(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                SizedBox(
-                                  width: size.width * 0.5,
-                                  child: CheckboxListTile(
-                                    activeColor: kPrimaryColour,
-                                    contentPadding: const EdgeInsets.all(0.0),
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                    value: _isChecked,
-                                    onChanged: (newValue) {
-                                      setState(() {
-                                        _isChecked = newValue!;
-                                      });
-                                    },
-                                    title: const Text('Remember Me'),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () => Navigator.of(context).pushNamed(
-                                    ForgotPasswordScreen.id,
-                                  ),
-                                  child: Text(
-                                    'Forgot Password',
-                                    style: TextStyle(
-                                      color: kSecondaryColour,
-                                      fontSize: 16.0.sp,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            SizedBox(
+                              height: kDefaultPadding.h,
                             ),
-                            const Spacer(),
                             CustomButton(
-                              label: 'Sign in',
+                              label: 'Send OTP Code',
                               buttonBackgroundColor: kPrimaryColour,
-                              pressed: () => Navigator.of(context).pushNamed(
-                                DashboardScreen.id,
-                              ),
+                              pressed: () {
+                                // _showSuccessBottomSheet(context);
+                              },
                             ),
-                            const Spacer(),
+                            SizedBox(
+                              height: kDefaultPadding.h,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('Don\'t have an account?  ',
+                                Text('Already have an account?  ',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 16.0.sp,
                                     )),
                                 GestureDetector(
                                   onTap: () => Navigator.of(context).pushNamed(
-                                    SignUpScreen.id,
+                                    LoginScreen.id,
                                   ),
                                   child: Text(
-                                    'Sign up',
+                                    'Sign in',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: kSecondaryColour,
@@ -186,3 +136,4 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
