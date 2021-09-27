@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quikpay/screens/auth/forgot_password/forgot_password_screen.dart';
 import 'package:quikpay/screens/auth/login/login_screen.dart';
 import 'package:quikpay/screens/auth/otp/otp_screen.dart';
+import 'package:quikpay/screens/auth/set_password/set_password_screen.dart';
 import 'package:quikpay/screens/auth/sign_up/signup_screen.dart';
 import 'package:quikpay/screens/auth/verify_email/verify_email_screen.dart';
 import 'package:quikpay/screens/verify_account/account_confirmation_screen.dart';
@@ -59,6 +60,7 @@ class Quikpay extends StatelessWidget {
           VerifyEmailScreen.id: (context) => const VerifyEmailScreen(),
           ForgotPasswordScreen.id: (context) => const ForgotPasswordScreen(),
           OtpScreen.id: (context) => const OtpScreen(),
+          SetPasswordScreen.id: (context)=> const SetPasswordScreen(),
           OnboardingScreen.id: (context) => const OnboardingScreen(),
           DashboardScreen.id: (context) => const DashboardScreen(),
           VerifyAccount.id: (context) => const VerifyAccount(),

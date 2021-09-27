@@ -6,6 +6,7 @@ import 'package:quikpay/components/custom_stack_with_bottom_pattern_image.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
+import 'package:quikpay/screens/auth/set_password/set_password_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -102,9 +103,9 @@ class _OtpScreenState extends State<OtpScreen> {
                             CustomButton(
                               label: 'Verify',
                               buttonBackgroundColor: kPrimaryColour,
-                              pressed: () {
-                                // _showSuccessBottomSheet(context);
-                              },
+                              pressed: () => Navigator.of(context).pushNamed(
+                                SetPasswordScreen.id,
+                              ),
                             ),
                           ],
                         ),

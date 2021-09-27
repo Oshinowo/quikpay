@@ -9,23 +9,25 @@ import 'package:quikpay/constants/app_constants.dart';
 import 'package:quikpay/screens/auth/login/login_screen.dart';
 import 'package:quikpay/utils/functions.dart';
 
-class VerifyEmailScreen extends StatefulWidget {
-  const VerifyEmailScreen({Key? key}) : super(key: key);
-  static const String id = "email verification";
+class SetPasswordScreen extends StatefulWidget {
+  const SetPasswordScreen({Key? key}) : super(key: key);
+  static const String id = "set new password";
 
   @override
-  _VerifyEmailScreenState createState() => _VerifyEmailScreenState();
+  _SetPasswordScreenState createState() => _SetPasswordScreenState();
 }
 
-class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
-  final _verifyEmailFormGlobalKey = GlobalKey<FormState>();
-  final TextEditingController _verificationNumberController =
+class _SetPasswordScreenState extends State<SetPasswordScreen> {
+  final _setNewPasswordFormGlobalKey = GlobalKey<FormState>();
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
       TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _verificationNumberController.dispose();
+    _newPasswordController.dispose();
+    _confirmPasswordController.dispose();
   }
 
   @override
@@ -54,7 +56,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   ),
                   SizedBox(height: kDefaultPadding.h / 2),
                   Text(
-                    'Verify Email',
+                    'Set Password',
                     style: kHeadingTextStyle.copyWith(
                       fontSize: 36.0.sp,
                       color: Palette.kCustomColour.shade300,
@@ -65,7 +67,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                     height: kDefaultPadding.h / 2,
                   ),
                   Text(
-                    'Check your email for verification code',
+                    'Enter a new password for your account',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18.0.sp,
@@ -79,7 +81,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   SizedBox(
                     height: size.height * 0.4,
                     child: Form(
-                      key: _verifyEmailFormGlobalKey,
+                      key: _setNewPasswordFormGlobalKey,
                       child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
@@ -88,9 +90,20 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                           children: [
                             CustomTextField(
                               asTerikText: false,
-                              controller: _verificationNumberController,
-                              placeholder: 'Enter code here',
-                              keyboardInputType: TextInputType.number,
+                              controller: _newPasswordController,
+                              placeholder: 'New Password',
+                              keyboardInputType: TextInputType.visiblePassword,
+                              textInputAction: TextInputAction.next,
+                              validate: (String? value) {},
+                            ),
+                            SizedBox(
+                              height: kDefaultPadding.h,
+                            ),
+                            CustomTextField(
+                              asTerikText: false,
+                              controller: _confirmPasswordController,
+                              placeholder: 'Confirm Password',
+                              keyboardInputType: TextInputType.visiblePassword,
                               textInputAction: TextInputAction.done,
                               validate: (String? value) {},
                             ),
@@ -98,15 +111,14 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                               height: kDefaultPadding.h,
                             ),
                             CustomButton(
-                              label: 'Verify Now',
+                              label: 'Save',
                               buttonBackgroundColor: kPrimaryColour,
                               pressed: () => showSuccessBottomSheet(
                                 context,
                                 firstLineDescription:
-                                    'Your email has been verified',
-                                secondLineDescription:
-                                    'Your email is your wallet ID',
-                                buttonLabel: 'Sign in',
+                                    'Your password has been reset',
+                                secondLineDescription: 'successfully',
+                                buttonLabel: 'OK',
                                 pressed: () =>
                                     Navigator.of(context).pushReplacementNamed(
                                   LoginScreen.id,
