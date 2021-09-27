@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quikpay/components/custom_button.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
-import 'package:quikpay/screens/login/login_screen.dart';
-import 'package:quikpay/screens/sign_up/signup_screen.dart';
+import 'package:quikpay/screens/auth/login/login_screen.dart';
+import 'package:quikpay/screens/auth/sign_up/signup_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = "home screen";

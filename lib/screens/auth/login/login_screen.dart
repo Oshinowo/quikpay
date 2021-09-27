@@ -7,8 +7,8 @@ import 'package:quikpay/components/custom_button.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
+import 'package:quikpay/screens/auth/sign_up/signup_screen.dart';
 import 'package:quikpay/screens/dashboard/dashboard_screen.dart';
-import 'package:quikpay/screens/sign_up/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = "login screen";

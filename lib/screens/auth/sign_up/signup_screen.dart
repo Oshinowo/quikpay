@@ -6,7 +6,8 @@ import 'package:quikpay/components/custom_button.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
-import 'package:quikpay/screens/login/login_screen.dart';
+import 'package:quikpay/screens/auth/login/login_screen.dart';
+import 'package:quikpay/screens/auth/verify_email/verify_email_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const String id = 'registration screen';
@@ -118,7 +119,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               CustomButton(
                                 label: 'Sign up',
                                 buttonBackgroundColor: kPrimaryColour,
-                                pressed: () {},
+                                pressed: () => Navigator.of(context).pushNamed(
+                                  VerifyEmailScreen.id,
+                                ),
                               ),
                               const Spacer(),
                               Row(
