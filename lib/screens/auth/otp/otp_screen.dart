@@ -6,25 +6,23 @@ import 'package:quikpay/components/custom_stack_with_bottom_pattern_image.dart';
 import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/constants/app_constants.dart';
-import 'package:quikpay/screens/auth/login/login_screen.dart';
-import 'package:quikpay/screens/auth/otp/otp_screen.dart';
 
-class ForgotPasswordScreen extends StatefulWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
-  static const String id = 'forgot password';
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({Key? key}) : super(key: key);
+  static const String id = 'otp code screen';
 
   @override
-  _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();
+  _OtpScreenState createState() => _OtpScreenState();
 }
 
-class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
-  final _forgotPasswordFormGlobalKey = GlobalKey<FormState>();
-  final TextEditingController _emailController = TextEditingController();
+class _OtpScreenState extends State<OtpScreen> {
+  final _otpFormGlobalKey = GlobalKey<FormState>();
+  final TextEditingController _otpCodeController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _emailController.dispose();
+    _otpCodeController.dispose();
   }
 
   @override
@@ -53,7 +51,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   SizedBox(height: kDefaultPadding.h / 2),
                   Text(
-                    'Forgot Password',
+                    'OTP Code',
                     style: kHeadingTextStyle.copyWith(
                       fontSize: 36.0.sp,
                       color: Palette.kCustomColour.shade300,
@@ -63,13 +61,18 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   SizedBox(
                     height: kDefaultPadding.h / 2,
                   ),
-                  Text(
-                    'Enter your registered email address',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18.0.sp,
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColour.withOpacity(0.8),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding.w + 10,
+                    ),
+                    child: Text(
+                      'We sent a code to your email address, kindly enter it here',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18.0.sp,
+                        fontWeight: FontWeight.w600,
+                        color: kPrimaryColour.withOpacity(0.8),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -78,7 +81,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   SizedBox(
                     height: size.height * 0.4,
                     child: Form(
-                      key: _forgotPasswordFormGlobalKey,
+                      key: _otpFormGlobalKey,
                       child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
@@ -87,9 +90,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           children: [
                             CustomTextField(
                               asTerikText: false,
-                              controller: _emailController,
-                              placeholder: 'Email Address',
-                              keyboardInputType: TextInputType.emailAddress,
+                              controller: _otpCodeController,
+                              placeholder: 'Enter code here',
+                              keyboardInputType: TextInputType.number,
                               textInputAction: TextInputAction.done,
                               validate: (String? value) {},
                             ),
@@ -97,37 +100,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               height: kDefaultPadding.h,
                             ),
                             CustomButton(
-                              label: 'Send OTP Code',
+                              label: 'Verify',
                               buttonBackgroundColor: kPrimaryColour,
-                              pressed: () => Navigator.of(context).pushNamed(
-                                OtpScreen.id,
-                              ),
-                            ),
-                            SizedBox(
-                              height: kDefaultPadding.h,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('Already have an account?  ',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 16.0.sp,
-                                    )),
-                                GestureDetector(
-                                  onTap: () => Navigator.of(context).pushNamed(
-                                    LoginScreen.id,
-                                  ),
-                                  child: Text(
-                                    'Sign in',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: kSecondaryColour,
-                                      fontSize: 16.0.sp,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              pressed: () {
+                                // _showSuccessBottomSheet(context);
+                              },
                             ),
                           ],
                         ),

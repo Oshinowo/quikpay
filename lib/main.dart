@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quikpay/screens/auth/forgot_password/forgot_password_screen.dart';
 import 'package:quikpay/screens/auth/login/login_screen.dart';
+import 'package:quikpay/screens/auth/otp/otp_screen.dart';
 import 'package:quikpay/screens/auth/sign_up/signup_screen.dart';
 import 'package:quikpay/screens/auth/verify_email/verify_email_screen.dart';
 import 'package:quikpay/screens/verify_account/account_confirmation_screen.dart';
@@ -56,7 +57,8 @@ class Quikpay extends StatelessWidget {
           LoginScreen.id: (context) => const LoginScreen(),
           SignUpScreen.id: (context) => const SignUpScreen(),
           VerifyEmailScreen.id: (context) => const VerifyEmailScreen(),
-          ForgotPasswordScreen.id: (context)=> const ForgotPasswordScreen(),
+          ForgotPasswordScreen.id: (context) => const ForgotPasswordScreen(),
+          OtpScreen.id: (context) => const OtpScreen(),
           OnboardingScreen.id: (context) => const OnboardingScreen(),
           DashboardScreen.id: (context) => const DashboardScreen(),
           VerifyAccount.id: (context) => const VerifyAccount(),
