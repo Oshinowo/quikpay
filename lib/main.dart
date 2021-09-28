@@ -15,7 +15,6 @@ import 'package:quikpay/screens/login/login_screen.dart';
 import 'package:quikpay/screens/sign_up/signup_screen.dart';
 
 int? initScreen;
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
