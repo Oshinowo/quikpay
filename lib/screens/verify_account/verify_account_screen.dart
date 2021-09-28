@@ -94,7 +94,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                             asTerikText: false,
                             keyboardInputType: TextInputType.number,
                             validate: (value) {},
-                            placeholder: 'Verification Number',
+                            placeholder: 'National Verification Number',
                           ),
                           SizedBox(
                             height: kDefaultPadding.h,

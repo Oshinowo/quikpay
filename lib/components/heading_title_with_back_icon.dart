@@ -27,7 +27,7 @@ class HeadingTitleWithBackIcon extends StatelessWidget {
           ),
         ),
         Center(
-          widthFactor: 2.0.w,
+          widthFactor: 1.9.w,
           child: Text(
             title,
             style: kSecondHeadingTextStyle.copyWith(

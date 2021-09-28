@@ -10,7 +10,7 @@ const kHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.w800,
 );
 const kSecondHeadingTextStyle = TextStyle(
-  fontSize: 26.0,
+  fontSize: 24.0,
   fontWeight: FontWeight.w400,
 );
 const kTextFieldDecoration = InputDecoration(
