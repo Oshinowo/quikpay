@@ -40,7 +40,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const HeadingTitleWithBackIcon(
-                    title: 'Verify Account',
+                    title: '\tVerify Account',
                   ),
                   SizedBox(
                     height: kDefaultPadding.h * 2,
@@ -94,7 +94,7 @@ class _VerifyAccountState extends State<VerifyAccount> {
                             asTerikText: false,
                             keyboardInputType: TextInputType.number,
                             validate: (value) {},
-                            placeholder: 'Verification Number',
+                            placeholder: 'National Verification Number',
                           ),
                           SizedBox(
                             height: kDefaultPadding.h,

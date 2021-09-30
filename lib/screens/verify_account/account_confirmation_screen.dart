@@ -23,7 +23,7 @@ class AccountConfirmationScreen extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const HeadingTitleWithBackIcon(
-                title: 'Confirmation',
+                title: '\t\t\tConfirmation',
               ),
               Padding(
                 padding: EdgeInsets.symmetric(

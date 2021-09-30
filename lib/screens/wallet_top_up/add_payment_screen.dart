@@ -5,6 +5,7 @@ import 'package:quikpay/components/custom_text_form_field.dart';
 import 'package:quikpay/components/heading_title_description.dart';
 import 'package:quikpay/components/heading_title_with_back_icon.dart';
 import 'package:quikpay/constants/app_constants.dart';
+import 'package:quikpay/screens/wallet_top_up/payment_method_screen.dart';
 
 class AddPaymentAmountScreen extends StatefulWidget {
   const AddPaymentAmountScreen({Key? key}) : super(key: key);
@@ -20,10 +21,10 @@ class _AddPaymentAmountScreenState extends State<AddPaymentAmountScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: FocusScope.of(context).unfocus,
-        child: SafeArea(
+    return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+        body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultPadding.h,
@@ -32,7 +33,7 @@ class _AddPaymentAmountScreenState extends State<AddPaymentAmountScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const HeadingTitleWithBackIcon(
-                  title: 'Add Money',
+                  title: '\t\t\t\t\tAdd Money',
                 ),
                 SizedBox(
                   height: kDefaultPadding.h * 4,
@@ -72,7 +73,9 @@ class _AddPaymentAmountScreenState extends State<AddPaymentAmountScreen> {
                         CustomButton(
                           label: 'Continue',
                           buttonBackgroundColor: kPrimaryColour,
-                          pressed: () {},
+                          pressed: () => Navigator.of(context).pushNamed(
+                            PaymentMethodScreen.id,
+                          ),
                         ),
                       ],
                     ),

@@ -13,12 +13,12 @@ import 'package:quikpay/screens/onboarding/onboarding_screen.dart';
 import 'package:quikpay/screens/verify_account/success_screen.dart';
 import 'package:quikpay/screens/verify_account/verify_account_screen.dart';
 import 'package:quikpay/screens/wallet_top_up/add_payment_screen.dart';
+import 'package:quikpay/screens/wallet_top_up/payment_method_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:quikpay/config/palette.dart';
 import 'package:quikpay/screens/home/home_screen.dart';
 
 int? initScreen;
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -70,6 +70,7 @@ class Quikpay extends StatelessWidget {
               const AccountVerificationSuccessScreen(),
           AddPaymentAmountScreen.id: (context) =>
               const AddPaymentAmountScreen(),
+          PaymentMethodScreen.id: (context) => const PaymentMethodScreen(),
         },
       ),
     );

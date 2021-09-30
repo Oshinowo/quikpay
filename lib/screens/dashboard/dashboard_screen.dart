@@ -5,6 +5,7 @@ import 'package:quikpay/constants/app_constants.dart';
 import 'package:quikpay/screens/dashboard/local_components/dashboard_mini_card_with_icon.dart';
 import 'package:quikpay/screens/dashboard/local_components/transaction_list_tile.dart';
 import 'package:quikpay/screens/dashboard/local_components/transactions_navigation_menu_button.dart';
+import 'package:quikpay/screens/verify_account/verify_account_screen.dart';
 import 'package:quikpay/screens/wallet_top_up/add_payment_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -54,7 +55,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.of(context).pushNamed(
+                      VerifyAccount.id,
+                    ),
                     icon: FaIcon(
                       FontAwesomeIcons.bell,
                       size: kDefaultIconSize.sp,
